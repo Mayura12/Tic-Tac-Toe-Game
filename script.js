@@ -119,17 +119,19 @@ function displayTieMessage() {
 }
 
 function resetGame() {
-  clearInterval(timer);
-  overlay.style.display = "flex";
-  board = Array(9).fill(null);
-  cells.forEach((cell) => {
-    cell.textContent = "";
-    cell.classList.remove("taken");
-  });
-  currentPlayer = "X";
-  turnDisplay.textContent = "Player X's turn";
-  timerDisplay.textContent = `Time left: ${timeLeft}s`;
-}
+    clearInterval(timer);
+    overlay.style.display = "flex";
+    tieOverlay.style.display = "none"; 
+    board = Array(9).fill(null);
+    cells.forEach((cell) => {
+      cell.textContent = "";
+      cell.classList.remove("taken");
+    });
+    currentPlayer = "X";
+    turnDisplay.textContent = "Player X's turn";
+    timerDisplay.textContent = `Time left: ${timeLeft}s`;
+  }
+  
 
 // restart the game after a win
 function restartAfterWin() {

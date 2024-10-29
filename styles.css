@@ -1,4 +1,3 @@
-/* Overall body styling */
 body {
   display: flex;
   justify-content: center;
@@ -8,7 +7,6 @@ body {
   color: #fff;
 }
 
-/* Overlay styling */
 .overlay {
   position: fixed;
   top: 0;
@@ -24,6 +22,7 @@ body {
 }
 
 .overlay-content {
+  color: black;
   text-align: center;
   background-color: #333;
   padding: 20px;
@@ -62,18 +61,15 @@ body {
   background-color: #1558b0;
 }
 
-/* Game container styling */
 .game-container {
   text-align: center;
 }
 
-/* Status text */
 .status {
   margin-bottom: 10px;
   font-size: 1.2em;
 }
 
-/* Game board styling */
 .board {
   display: grid;
   grid-template-columns: repeat(3, 120px);
@@ -123,11 +119,10 @@ button:hover {
   background-color: #1558b0;
 }
 
-
-/* Confirmation Modal Overlay Styles */
-.confirmation-content h2{
+.confirmation-content h2 {
   color: black;
 }
+
 .confirmation-overlay {
   position: fixed;
   top: 0;
@@ -175,4 +170,91 @@ button:hover {
   color: white;
   border: none;
   border-radius: 5px;
+}
+
+.winner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.winner-content {
+  color: black;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 400px;
+}
+
+.winner-content h2 {
+  margin-top: 0;
+}
+
+.winner-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.player-indicators {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.player {
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.playerX {
+  border-bottom: 3px solid transparent;
+}
+
+.playerO {
+  border-bottom: 3px solid transparent;
+}
+
+.active {
+  border-bottom: 3px solid red;
+}
+
+#timeoutOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay-content {
+  color: black;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+#tieMessage {
+  color: black;
 }

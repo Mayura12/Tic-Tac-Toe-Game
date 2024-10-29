@@ -84,3 +84,79 @@ function handleCellClick(event) {
     }
   }
 }
+
+//  check for a winning combination
+function checkWin() {
+  return winningCombinations.some((combination) => {
+    return combination.every((index) => board[index] === currentPlayer);
+  });
+}
+
+function restartGame() {
+  confirmationOverlay.style.display = "flex";
+}
+
+// confirm exit and reset the game
+function confirmExit() {
+  confirmationOverlay.style.display = "none";
+  resetGame();
+}
+
+// cancel exit and hide the confirmation overlay
+function cancelExit() {
+  confirmationOverlay.style.display = "none";
+}
+
+function displayWinner(winner) {
+  winnerMessage.textContent = `Player ${winner} wins!`;
+  winnerOverlay.style.display = "flex";
+}
+
+// display tie message in overlay
+function displayTieMessage() {
+  tieMessage.textContent = "It's a tie!";
+  tieOverlay.style.display = "flex";
+}
+
+function resetGame() {
+  clearInterval(timer);
+  overlay.style.display = "flex";
+  board = Array(9).fill(null);
+  cells.forEach((cell) => {
+    cell.textContent = "";
+    cell.classList.remove("taken");
+  });
+  currentPlayer = "X";
+  turnDisplay.textContent = "Player X's turn";
+  timerDisplay.textContent = `Time left: ${timeLeft}s`;
+}
+
+// restart the game after a win
+function restartAfterWin() {
+  winnerOverlay.style.display = "none";
+  startGame();
+}
+
+// restart the game after a tie
+function restartAfterTie() {
+  tieOverlay.style.display = "none";
+  startGame();
+}
+
+function updatePlayerIndicators() {
+  if (currentPlayer === "X") {
+    playerXIndicator.classList.add("active");
+    playerOIndicator.classList.remove("active");
+  } else {
+    playerOIndicator.classList.add("active");
+    playerXIndicator.classList.remove("active");
+  }
+}
+
+function displayTimeoutMessage() {
+  const winner = currentPlayer === "X" ? "O" : "X";
+  winnerMessage.textContent = `Player ${currentPlayer} took too long! Player ${winner} wins!`;
+  winnerOverlay.style.display = "flex";
+}
+
+cells.forEach((cell) => cell.addEventListener("click", handleCellClick));

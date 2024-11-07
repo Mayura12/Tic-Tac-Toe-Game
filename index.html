@@ -9,28 +9,26 @@
   <body>
     <div class="game-container">
       <h1>Tic Tac Toe</h1>
+
+      <!-- Player Indicators -->
       <div class="player-indicators">
-        <div class="player" id="playerX">Player X</div>
-        <div class="player" id="playerO">Player O</div>
+        <div class="player" id="player-X">Player X</div>
+        <div class="player" id="player-O">Player O</div>
       </div>
 
+      <!-- Game Status -->
       <div class="status">
         <p id="turn">Player X's turn</p>
         <p id="timer">Time left: 15s</p>
       </div>
-      <div class="board">
-        <div class="cell" data-index="0"></div>
-        <div class="cell" data-index="1"></div>
-        <div class="cell" data-index="2"></div>
-        <div class="cell" data-index="3"></div>
-        <div class="cell" data-index="4"></div>
-        <div class="cell" data-index="5"></div>
-        <div class="cell" data-index="6"></div>
-        <div class="cell" data-index="7"></div>
-        <div class="cell" data-index="8"></div>
-      </div>
+
+      <!-- Dynamic Game Board -->
+      <div class="board"></div>
+
+      <!-- Restart Game Button -->
       <button onclick="restartGame()">Restart Game</button>
     </div>
+
     <!-- Start Overlay -->
     <div class="overlay" id="overlay">
       <div class="overlay-content">
@@ -46,9 +44,10 @@
             If the grid is full and no player has won, the game is a draw.
           </li>
         </ul>
-        <button onclick="startGame()">Start Game</button>
+        <button onclick="initializeGame()">Start Game</button>
       </div>
     </div>
+
     <!-- Confirmation Overlay -->
     <div class="confirmation-overlay" id="confirmationOverlay">
       <div class="confirmation-content">
@@ -58,6 +57,7 @@
         <button onclick="cancelExit()">No</button>
       </div>
     </div>
+
     <!-- Winner Overlay -->
     <div class="winner-overlay" id="winnerOverlay">
       <div class="winner-content">
@@ -65,21 +65,16 @@
         <button onclick="restartAfterWin()">Play Again</button>
       </div>
     </div>
-    <!-- Time Out Overlay -->
-    <div class="overlay" id="timeoutOverlay">
+
+    <!-- Tie Game Overlay -->
+    <div class="overlay" id="tieOverlay" style="display: none">
       <div class="overlay-content">
-        <h2 id="timeoutMessage"></h2>
-        <button onclick="restartAfterTimeout()">Play Again</button>
-      </div>
-    </div>
-        <!-- Tie Game Overlay -->
-    <div class="overlay" id="tieOverlay" style="display: none;">
-      <div class="overlay-content">
-        <h2 id="tieMessage"></h2>
+        <h2 id="tieMessage" class="tie-message"></h2>
         <button onclick="restartAfterTie()">Play Again</button>
       </div>
     </div>
-    
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,0 +1,247 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #202124;
+  color: #fff;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1000;
+}
+
+.overlay-content {
+  color: black;
+  text-align: center;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.overlay-content h2 {
+  margin-top: 0;
+}
+
+.overlay-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.overlay-content ul li {
+  margin: 8px 0;
+  font-size: 1em;
+}
+
+.overlay-content button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.overlay-content button:hover {
+  background-color: #1558b0;
+}
+
+.game-container {
+  text-align: center;
+}
+
+.status {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-gap: 4px;
+  background-color: #3c4043;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.cell {
+  width: 120px;
+  height: 120px;
+  background-color: #202124;
+  color: #fff;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.cell:hover {
+  background-color: #5f6368;
+}
+
+.cell.taken {
+  background-color: #3c4043;
+  cursor: not-allowed;
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  margin-top: 15px;
+  cursor: pointer;
+  background-color: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1558b0;
+}
+
+.confirmation-content h2 {
+  color: black;
+}
+
+.confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.confirmation-content {
+  color: black;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 400px;
+}
+
+.confirmation-content h2 {
+  margin-top: 0;
+}
+
+.confirmation-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.confirmation-content button:first-child {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.confirmation-content button:last-child {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.winner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.winner-content {
+  color: black;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 400px;
+}
+
+.winner-content h2 {
+  margin-top: 0;
+}
+
+.winner-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.player-indicators {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.player {
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.player-X {
+  border-bottom: 3px solid transparent;
+}
+
+.player-O {
+  border-bottom: 3px solid transparent;
+}
+
+.active {
+  border-bottom: 3px solid red;
+}
+
+.overlay-content {
+  color: black;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.tie-message {
+  color: black;
+}
